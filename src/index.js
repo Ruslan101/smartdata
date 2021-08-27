@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import Main_w from './components/wrapComponents/main_w';
+import store from './store/store';
+import { Provider } from 'react-redux';
 
 export const root = document.getElementById('root');
 
@@ -9,7 +12,9 @@ export default class Index extends React.Component {
 	render() {
 		return (
 			<React.StrictMode>
-				
+				<Provider store={store}>
+					<Main_w />
+				</Provider>
 			</React.StrictMode>
 		);
 	}
