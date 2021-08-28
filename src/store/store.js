@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
-import activePage_Reducer from './reducers/activePage_Reducer';
+import reducer from './reducers/reducer';
 
-const store = createStore(activePage_Reducer);
+const store = createStore(reducer);
 
 export default store;
 

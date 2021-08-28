@@ -1,5 +1,6 @@
 const initialState = {
-	activePage: "/"
+	activePage: "/",
+	books: []
 };
 
 export default initialState;
