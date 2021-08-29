@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import NavigationOption from '../navigationOption';
+import NavigationOption from '../Layout/navigationOption';
 import MapDispatchToProps from '../../store/mapDispatchToProps';
 
 const NavigationOption_w = connect(null, MapDispatchToProps("NavigationOption"))(NavigationOption);

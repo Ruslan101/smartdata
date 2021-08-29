@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
-import NavigationOption_w from './wrapComponents/navigationOption_w';
+import NavigationOption_w from '../wrapComponents/navigationOption_w';
 
 const useStyles = makeStyles((theme) => ({
 	sectionDesktop: {

@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 	}
 }));
 
-export default function CardComponent(props) {
+export default function CardComponentBooks(props) {
 	const classes = useStyles();
 
 	return (
