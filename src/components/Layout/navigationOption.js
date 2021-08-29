@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     title: {
@@ -24,6 +25,7 @@ function NavigationOption(props) {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
+    const history = useHistory();
       
     const handleMenu = (event) => {
         setAnchorEl(event.currentTarget);
@@ -39,12 +41,12 @@ function NavigationOption(props) {
 		})
 		.then(function () {
 			window.localStorage.removeItem('token');
-            window.location = '/';
+            history.push("/"); 
 		})
         .catch(function (error) {
             console.error(error);
             window.localStorage.removeItem('token');
-            window.location = '/';
+            history.push("/"); 
         });
     }
     const IsAutorisationTrue = (
@@ -59,6 +61,9 @@ function NavigationOption(props) {
     );
     const IsAutorisationFalse = (
         <React.Fragment>
+            <Typography className={classes.title, classes.text} variant="h6" noWrap>
+                <Link className={"title"} to='/createAuthore'>Add authore</Link>
+            </Typography>
             <Typography className={classes.title, classes.text} variant="h6" noWrap>
                 <Link className={"title"} to='/authors'>Authors</Link>
             </Typography>

@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -33,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignIn() {
 	const classes = useStyles();
+	const history = useHistory();
 
 	function handleSubmit(e) {
 		e.preventDefault();
@@ -54,6 +56,7 @@ export default function SignIn() {
 		})
 			.then(function (response) {
 				console.log(response);
+				history.push("/signIn");
 		})
 			.catch(function (error) {
 				console.error(error);

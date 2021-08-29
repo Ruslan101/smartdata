@@ -5,6 +5,7 @@ import SignUp from '../Registration/sigUp';
 import Home from './home';
 import Books from '../Authors and Books/books';
 import Authors from '../Authors and Books/authors';
+import CreateAuthore from '../Authors and Books/createAuthore';
 import SignIn_w from '../wrapComponents/signIn_w';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -28,6 +29,9 @@ export default class Main extends React.Component {
                     </Route>
                     <Route path="/authors">
                         <Authors />
+                    </Route>
+                    <Route path="/createAuthore">
+                        <CreateAuthore />
                     </Route>
                 </Switch>
                 <Footer />

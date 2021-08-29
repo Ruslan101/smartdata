@@ -18,7 +18,7 @@ function Books() {
 
 	if(booksArr.length == 1) { // Осторожно тут костыль!
 		axios({
-			method: 'get',
+			method: 'GET',
 			url: 'https://mobile.fakebook.press/api/books',
 			Authorization: window.localStorage.getItem("token")
 		})
@@ -36,7 +36,8 @@ function Books() {
               		<CardComponentBooks 
                         book={{
                             name: booksArr[i].name,
-                            desc: booksArr[i].desc
+                            desc: booksArr[i].desc,
+							id: booksArr[i].id
                         }}
                         key={i} 
                     />
