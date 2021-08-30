@@ -8,7 +8,16 @@ import { Provider } from 'react-redux';
 
 export const root = document.getElementById('root');
 
+/**
+ * @class Index
+ * @classdesc Возвращает React Component
+ */
 export default class Index extends React.Component {
+	/**
+	 * @method render
+	 * @returns {object} object React component
+	 * @summary Возвращает Main_w и передает store в контекст через Provider
+	 */
 	render() {
 		return (
 			<React.StrictMode>

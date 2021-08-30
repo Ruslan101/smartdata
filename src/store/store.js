@@ -1,6 +1,9 @@
 import { createStore } from 'redux';
 import reducer from './reducers/reducer';
 
+/**
+ * @const {object} Экземпляр обьекта глобального состояния
+ */
 const store = createStore(reducer);
 
 export default store;
