@@ -7,6 +7,13 @@ function mapStateToProps(component) {
 				};
 			}
 		}
+		case "NavigationOption": {
+			return function (state) {
+				return {
+					activePage: state.activePage
+				};
+			}
+		}
 		default: return undefined;
 	}
 }

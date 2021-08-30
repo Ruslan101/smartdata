@@ -24,4 +24,8 @@ code {
 .title {
   color: white !important;
   text-decoration: none !important;
+  font-weight: 300 !important;
+}
+.title:hover {
+  color: cyan !important;
 }

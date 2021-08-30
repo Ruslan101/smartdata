@@ -16,8 +16,12 @@ const useStyles = makeStyles((theme) => ({
       		display: 'block',
     	}
 	},
-    text: {
-		marginRight: "10px"
+    
+    title: {
+		marginRight: "10px",
+        '&:hover fieldset': { 
+            color: 'cyan !important'
+        }
 	}
 }));
 
@@ -37,7 +41,7 @@ function NavigationOption(props) {
         axios({
 			method: 'POST',
 			url: 'https://mobile.fakebook.press/api/logout',
-			Authorization: window.localStorage.getItem("token")
+			Authorization: `Bearer ${window.localStorage.getItem('token')}`
 		})
 		.then(function () {
 			window.localStorage.removeItem('token');
@@ -51,7 +55,7 @@ function NavigationOption(props) {
     }
     const IsAutorisationTrue = (
         <React.Fragment>
-            <Typography className={classes.title, classes.text} variant="h6" noWrap onClick={handleSigINClick}>
+            <Typography className={classes.title} variant="h6" noWrap onClick={handleSigINClick}>
                 <Link className={"title"} to='/signIn'>Войти</Link>
             </Typography>
             <Typography variant="h6" noWrap className={classes.title} onClick={handleRegistrationClick}>
@@ -61,14 +65,17 @@ function NavigationOption(props) {
     );
     const IsAutorisationFalse = (
         <React.Fragment>
-            <Typography className={classes.title, classes.text} variant="h6" noWrap>
-                <Link className={"title"} to='/createAuthore'>Add authore</Link>
+            <Typography className={classes.title} variant="h6" noWrap>
+                <Link className={"title"} to='/createBook'>Add book</Link>
             </Typography>
-            <Typography className={classes.title, classes.text} variant="h6" noWrap>
-                <Link className={"title"} to='/authors'>Authors</Link>
+            <Typography className={classes.title} variant="h6" noWrap>
+                <Link className={"title"} to='/createAuthore'>| Add authore</Link>
+            </Typography>
+            <Typography className={classes.title} variant="h6" noWrap>
+                <Link className={"title"} to='/authors'>| Authors</Link>
             </Typography>
             <Typography variant="h6" noWrap className={classes.title}>
-                <Link className={"title"} to='/books'>Books</Link>
+                <Link className={"title"} to='/books'>| Books</Link>
             </Typography>
             <Typography>
                 <IconButton
