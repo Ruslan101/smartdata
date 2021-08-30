@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function CreateAuthore() {
+function CreateBook() {
 	const classes = useStyles();
     const [selectedDate, setSelectedDate] = React.useState(new Date('2021-08-12T21:11:54'));
     const history = useHistory();
@@ -40,7 +40,7 @@ function CreateAuthore() {
 	function handleSubmit(e) {
 		e.preventDefault();
 		
-		var url = "https://mobile.fakebook.press/api/authors";
+		var url = "https://mobile.fakebook.press/api/books";
 
         var xhr = new XMLHttpRequest();
         xhr.open("POST", url);
@@ -54,23 +54,24 @@ function CreateAuthore() {
             console.log(xhr.responseText);
         }};
 
-        var data = `{ 
+        var data = `{
             "name": "${e.target.name.value}",
-            "bio": "${e.target.bio.value}",
-            "birth_date": "${e.target.date.value}"
+            "author_id": "1",
+            "desc": "${e.target.desc.value}",
+            "publication_date": "${e.target.date.value}"
         }`;
 
         xhr.send(data);
 
-        history.push("/authors");
+        history.push("/books");
 	}
-
+    
 	return (
 		<Container component="main" maxWidth="xs">
 			<CssBaseline />
 			<div className={classes.paper}>
 				<Typography component="h1" variant="h5">
-					Create Author
+					Create Book
 				</Typography>
 				<form className={classes.form} noValidate onSubmit={handleSubmit}>
 					<TextField
@@ -79,7 +80,7 @@ function CreateAuthore() {
 						required
 						fullWidth
 						id="name"
-						label="Author name"
+						label="Book name"
 						name="name"
 						autoFocus
 					/>
@@ -88,9 +89,9 @@ function CreateAuthore() {
 						margin="normal"
 						required
 						fullWidth
-						id="bio"
-						label="bio"
-						name="bio"
+						id="desc"
+						label="Description"
+						name="desc"
 					/>
                     <MuiPickersUtilsProvider utils={DateFnsUtils}>
                         <KeyboardDatePicker
@@ -101,7 +102,7 @@ function CreateAuthore() {
                             format="yyyy/MM/dd"
                             margin="normal"
                             id="date"
-                            label="Date picker inline"
+                            label="Publication date"
                             value={selectedDate}
                             onChange={handleDateChange}
                             KeyboardButtonProps={{
@@ -116,7 +117,7 @@ function CreateAuthore() {
 						color="primary"
 						className={classes.submit}
 					>
-						Create Author
+						Create Book
 					</Button>
 				</form>
 			</div>
@@ -124,4 +125,4 @@ function CreateAuthore() {
 	);
 }
 
-export default CreateAuthore;
+export default CreateBook;
